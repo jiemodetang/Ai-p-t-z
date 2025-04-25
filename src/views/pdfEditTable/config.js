@@ -32,11 +32,11 @@ const ifpugFunctionPointEvaluationPrompt = `您现在是一名资深软件造价
   3）EQ:查询展示功能,系统根据查询条件或者默认查询条件直接将内部数据展示给用户,不会进行任何数据计算修改等操作。EQ通常包括查询、下载、打印等功能。
   4）ILF:表示在系统内部维护的数据集合,这些数据集合由系统进行维护和管理。当有EI或者EO时,一定有对应的ILF。 
   5）EIF:由系统外部维护,但被本系统访问的数据组。通常功能描述中包含有外部数据,对接,引入、接口、第三方等,表示有EIF 。
-3、归纳出每个功能点名称,功能分类为子系统,一级模块,二级模块,转化的对应原文本内容,功能点计数项名称,功能类型。注意,其中二级模块要分开描述。
+3、归纳出每个功能点名称,功能分类为子系统,一级模块,二级模块,转化的对应原文本内容,功能点计数项名称,功能类型。请注意,其中二级模块一定要分开描述。
 4、功能点名称和功能描述中不要出现EI、EQ、EO、ILF、EIF。通常ILF或者EIF的功能点名称都是以信息结尾的,如用户信息,报表信息等 。
 5、将最后的结果整理成JSON格式输出,JSON格式如下，key必须如下描述: [{
     id: '',//id
-    subsystem: "",//子系统 
+    subsystem: "",//子系统
     level1: "",//一级模块
     level2: "",//二级模块
     description: '',//转化的对应原文本内容
@@ -59,11 +59,11 @@ const customizeEvaluationPrompt = `以下三点，必须遵守，
     3.请只输出JSON,不输出其他附加内容`
 
 const apiConfigs = {
-  doubao: {
+  'doubao-1-5-pro-32k-250115': {
     url: 'https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions',
-    model: "bot-20250416151228-wrjkv",
-    name: 'doubao',
-    value: 'doubao',
+    model: "doubao-1-5-pro-32k-250115",
+    name: 'doubao-1-5-pro-32k-250115',
+    value: 'doubao-1-5-pro-32k-250115',
     authorization: 'a5634a1c-cbd6-4508-8566-00102c88f6ff'
   },
   // deepSeekR1: {
